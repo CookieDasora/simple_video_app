@@ -14,7 +14,12 @@ class createUserController {
             })
         }
 
-        return res.json(result);
+        return res.json({
+            id: result.id,
+            username: result.username,
+            email: result.email,
+            created_at: result.created_at
+        });
     }
 }
 

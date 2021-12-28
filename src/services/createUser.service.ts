@@ -1,4 +1,4 @@
-import IUserRequest from "../interfaces/UserRequest.interface";
+import IUserRequest from "../interfaces/userRequest.interface";
 import { genSaltSync, hashSync } from 'bcrypt';
 import { getRepository } from "typeorm";
 import { User } from "../entities/User.entity";
@@ -14,14 +14,16 @@ class createUserSerivce {
         const hashPassword = hashSync(password, salt);
 
         const repo = getRepository(User);
+        
+        if (await repo.findOne({username})) {
+            return new Error("User already exists");
+        };
+
 
         if (await repo.findOne({email})) {
             return new Error("Email already registered");
         };
 
-        if (await repo.findOne({username})) {
-            return new Error("User already exists");
-        };
 
         const user = repo.create({
             username,

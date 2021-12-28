@@ -5,7 +5,6 @@ class getAllUsersController {
     async handle(req: Request, res: Response) {
         const service = new getAllUsersService();
         const users = await service.execute();
-        
         return res.json(users);
     }
 }
