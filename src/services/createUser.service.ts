@@ -2,12 +2,17 @@ import IUserRequest from "../interfaces/userRequest.interface";
 import { genSaltSync, hashSync } from 'bcrypt';
 import { getRepository } from "typeorm";
 import { User } from "../entities/User.entity";
+import validator from "validator";
 
 class createUserSerivce {
     async execute({ username, email, password }: IUserRequest): Promise<User | Error> {
         
         if (username === undefined || email === undefined || password === undefined ) {
             return new Error("Empty field")
+        }
+
+        if (validator.isEmail(email) === false) {
+            return new Error("Invalid email")
         }
 
         const salt = genSaltSync(15);

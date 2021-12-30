@@ -8,7 +8,7 @@ import getUserController from "./controllers/getUser.controller";
 import deleteUserController from "./controllers/deleteUser.controller";
 
 
-router.post('/users', new createUserController().handle)
+router.post('/users/create', new createUserController().handle)
 
 
 router.get('/users', new getAllUsersController().handle)

@@ -5,12 +5,8 @@ import validator from 'validator';
 class getUserService {
     async execute (id: string): Promise<User | Error> {
 
-        if (id.length < 36 || id.length > 36) {
+        if (id.length < 36 || id.length > 36 || validator.isUUID(id) === false) {
             return new Error('Invalid ID');
-        }
-
-        if (validator.isUUID(id) === false) {
-            return new Error('Invalid ID')
         }
 
         const repo = getRepository(User);
