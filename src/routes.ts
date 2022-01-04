@@ -6,7 +6,7 @@ import getUserController from './controllers/getUser.controller';
 
 const router = Router();
 
-router.post('/users/create', new createUserController().handle);
+router.post('/users/register', new createUserController().handle);
 
 router.get('/users', new getAllUsersController().handle);
 router.get('/users/:id', new getUserController().handle);

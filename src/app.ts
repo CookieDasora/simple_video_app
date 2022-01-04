@@ -3,7 +3,7 @@ import 'dotenv/config';
 
 import express, { Application, Request, Response } from 'express';
 
-import "./database";
+import './database';
 
 import { router } from './routes';
 
@@ -13,9 +13,9 @@ app.use(express.json());
 app.use(router);
 
 app.use((req: Request, res: Response) => {
-    res.status(404).json({
-        error: "Not found"
-    });
+  res.status(404).json({
+    error: 'Not found',
+  });
 });
 
-export { app }
+export { app };
