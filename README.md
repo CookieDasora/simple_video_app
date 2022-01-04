@@ -10,7 +10,7 @@
 ## Requisitos não funcionais
 
 - Utilizar Amazon S3 para armazenar os vídeos.
-- Utilizar TypeORM e Postgresql para armazenar os dados do usuário.
+- [] Utilizar TypeORM e Postgresql para armazenar os dados do usuário.
 - Utilizar Passport JS para autenticação.
 
 ## Regras de negócio
