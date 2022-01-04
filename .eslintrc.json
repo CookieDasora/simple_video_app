@@ -21,6 +21,8 @@
         "class-methods-use-this": "off",
         "no-unused-vars": "warn",
         "no-empty-function": "warn",
-        "import/extensions": "off"
+        "import/extensions": "off",
+        "consistent-return": "off",
+        "camelcase": "off"
     }
 }
