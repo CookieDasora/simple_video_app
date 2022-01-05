@@ -4,7 +4,7 @@ import validator from 'validator';
 import { User } from '../entities/User.entity';
 import IUserRequest from '../interfaces/userRequest.interface';
 
-class createUserSerivce {
+class registerUserSerivce {
   async execute({ username, email, password }: IUserRequest): Promise<User | Error> {
     if (username === undefined || email === undefined || password === undefined) {
       return new Error('Empty field');
@@ -39,4 +39,4 @@ class createUserSerivce {
   }
 }
 
-export default createUserSerivce;
+export default registerUserSerivce;

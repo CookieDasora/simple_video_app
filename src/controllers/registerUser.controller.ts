@@ -1,11 +1,11 @@
 import { Request, Response } from 'express';
-import createUserService from '../services/createUser.service';
+import registerUserService from '../services/registerUser.service';
 
-class createUserController {
+class registerUserController {
   async handle(req: Request, res: Response) {
     const { username, email, password } = req.body;
 
-    const service = new createUserService();
+    const service = new registerUserService();
     const result = await service.execute({ username, email, password });
 
     if (result instanceof Error) {
@@ -23,4 +23,4 @@ class createUserController {
   }
 }
 
-export default createUserController;
+export default registerUserController;
