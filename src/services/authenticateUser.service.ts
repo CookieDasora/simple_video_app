@@ -29,7 +29,7 @@ class authenticateUserService {
 
     const token = sign({
       username, id, created_at, email,
-    }, process.env.JWT_SECRET, { expiresIn: '20s' });
+    }, process.env.JWT_SECRET, { expiresIn: '1d' });
 
     return {
       username,
