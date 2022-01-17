@@ -6,16 +6,13 @@ import IUserRequest from '../interfaces/userRequest.interface';
 
 class registerUserService {
   async execute({ username, email, password }: IUserRequest): Promise<User | Error> {
-    if (username === undefined || email === undefined || password === undefined) {
-      return new Error('Empty field');
+    if (username.length === 0 || email.length === 0 || password.length === 0) {
+      return new Error('Missing fields');
     }
 
     if (validator.isEmail(email) === false) {
       return new Error('Invalid email');
     }
-
-    const salt = genSaltSync(15);
-    const hashPassword = hashSync(password, salt);
 
     const repo = getRepository(User);
 
@@ -26,6 +23,9 @@ class registerUserService {
     if (await repo.findOne({ email })) {
       return new Error('Email already registered');
     }
+
+    const salt = genSaltSync(15);
+    const hashPassword = hashSync(password, salt);
 
     const user = repo.create({
       username,

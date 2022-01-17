@@ -13,7 +13,7 @@ class authenticateUserService {
       return new Error('Invalid email or password');
     }
 
-    if (email === undefined || password === undefined) {
+    if (email.length === 0 || password.length === 0) {
       return new Error('Missing fields');
     }
 
