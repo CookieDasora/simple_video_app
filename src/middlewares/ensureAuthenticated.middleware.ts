@@ -3,7 +3,7 @@ import { verify } from 'jsonwebtoken';
 import ITokenPayload from '../interfaces/tokenPayload.interface';
 
 function ensureAuthenticated(req: Request, res: Response, next: NextFunction) {
-  if (req.headers.authorization === undefined) {
+  if (req.headers.authorization === undefined || req.headers.authorization.length === 0) {
     return res.status(400).json({
       error: 'Missing token',
     });
