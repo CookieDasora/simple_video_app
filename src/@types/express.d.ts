@@ -5,7 +5,7 @@ import ITokenPayload from '../interfaces/tokenPayload.interface';
 declare global {
     namespace Express {
         interface Request {
-            user? : ITokenPayload
+            user? : ITokenPayload,
         }
     }
 }

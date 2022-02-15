@@ -23,6 +23,7 @@
         "no-empty-function": "warn",
         "import/extensions": "off",
         "consistent-return": "off",
-        "camelcase": "off"
+        "camelcase": "off",
+        "arrow-body-style": "off"
     }
 }

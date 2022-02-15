@@ -20,21 +20,25 @@ export class CreateVideos1642619584768 implements MigrationInterface {
             type: 'varchar',
           },
           {
-            name: 'author_user',
+            name: 'author_id',
             type: 'uuid',
+          },
+          {
+            name: 'originalname',
+            type: 'varchar',
+          },
+          {
+            name: 'filename',
+            type: 'varchar',
+          },
+          {
+            name: 'size',
+            type: 'numeric',
           },
           {
             name: 'created_at',
             type: 'timestamp',
             default: 'now()',
-          },
-        ],
-        foreignKeys: [
-          {
-            name: 'fk_video_author',
-            columnNames: ['author_user'],
-            referencedTableName: 'users',
-            referencedColumnNames: ['id'],
           },
         ],
       }),
