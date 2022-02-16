@@ -36,6 +36,10 @@ export class CreateVideos1642619584768 implements MigrationInterface {
             type: 'numeric',
           },
           {
+            name: 'url',
+            type: 'varchar',
+          },
+          {
             name: 'created_at',
             type: 'timestamp',
             default: 'now()',

@@ -11,6 +11,7 @@ class uploadFileService {
     filename,
     size,
     author_id,
+    url,
   }: IVideoRequest): Promise<Video | Error | string> {
     const repo = getRepository(Video);
     const userRepo = getRepository(User);
@@ -28,6 +29,7 @@ class uploadFileService {
       filename,
       size,
       author_id,
+      url,
     });
 
     await repo.save(video);

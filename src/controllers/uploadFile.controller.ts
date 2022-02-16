@@ -18,11 +18,13 @@ class uploadFileController {
 
     // @ts-ignore
     const filename = req.file.key;
+    // @ts-ignore
+    const url = req.file.location;
 
     const service = new uploadFileService();
 
     const result = await service.execute({
-      title, description, originalname, filename, size, author_id,
+      title, description, originalname, filename, size, author_id, url,
     });
 
     if (result instanceof Error) {

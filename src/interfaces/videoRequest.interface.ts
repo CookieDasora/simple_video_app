@@ -6,6 +6,7 @@ interface IVideoRequest {
     originalname?: string;
     filename?: string;
     size?: number;
+    url?: string | any;
 }
 
 export default IVideoRequest;
