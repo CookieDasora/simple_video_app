@@ -1,17 +1,22 @@
-# Requisitos da aplicação
+# Requirements
 
-## Requisitos funcionais
+## Functional requirements
 
-- **O usuário deve poder se autenticar utilizando email e senha.**
-- **O usuário deve poder publicar um vídeo de até 100 MB.**
-- O usuário deve poder comentar no vídeo.
-- O usuário deve poder criar um vídeo com uma categoria.
+- **User must be able to authenticate using email and password**.
+- **User must be able to upload a video up to 100 MB**.
+- User must be able to comment on the video.
+- User must be able to upload a video with a category.
+- User can change password if he has forgotten it.
+- User must have verified the email before uploading the video.
 
-## Requisitos não funcionais
+## Non function requirements
 
-- **Utilizar Amazon S3 para armazenar os vídeos.**
-- **Utilizar TypeORM e Postgresql para armazenar os dados do usuário.**
+- **Use Amazon S3 to store the videos**.
+- **Use TypeORM and Postgres to store user data**.
+- Use Redis and Nodemailer to send emails.
 
-## Regras de negócio
+## Business rule
 
-- O vídeo deve possuir apenas uma categoria.
+- Video must have only one category.
+- **User's username must be unique**.
+- **User can't create an account with the same email**.
