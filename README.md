@@ -13,7 +13,8 @@
 
 - **Use Amazon S3 to store the videos**.
 - **Use TypeORM and Postgres to store user data**.
-- Use Redis and Nodemailer to send emails.
+- **Use Redis to do background jobs like sending emails**.
+- **Use Nodemailer to send emails**.
 
 ## Business rule
 

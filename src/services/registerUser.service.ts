@@ -3,6 +3,7 @@ import { getRepository } from 'typeorm';
 import validator from 'validator';
 import { User } from '../entities/User.entity';
 import IUserRequest from '../interfaces/userRequest.interface';
+import Queue from '../lib/Queue';
 
 class registerUserService {
   async execute({ username, email, password }: IUserRequest): Promise<User | Error> {
@@ -32,6 +33,8 @@ class registerUserService {
       email,
       password: hashPassword,
     });
+
+    await Queue.add('RegistrationMail', { user });
 
     await repo.save(user);
 
