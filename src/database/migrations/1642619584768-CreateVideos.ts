@@ -45,6 +45,14 @@ export class CreateVideos1642619584768 implements MigrationInterface {
             default: 'now()',
           },
         ],
+        foreignKeys: [
+          {
+            name: 'fk_video_author',
+            columnNames: ['author_id'],
+            referencedTableName: 'users',
+            referencedColumnNames: ['id'],
+          },
+        ],
       }),
     );
   }

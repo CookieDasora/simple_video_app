@@ -11,7 +11,10 @@ class getVideoService {
       return new Error('Invalid video id');
     }
 
-    const video = await repo.findOne(video_id, { select: ['video_id', 'title', 'description', 'author_id', 'created_at', 'url'] });
+    const video = await repo.findOne(
+      video_id,
+      { select: ['video_id', 'title', 'description', 'author_id', 'created_at', 'url'], relations: ['author'] },
+    );
 
     if (video === undefined) {
       return new Error('Video doesn\'t exists');
