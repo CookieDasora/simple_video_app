@@ -14,7 +14,7 @@ class uploadFileController {
 
     const { originalname, size } = req.file;
 
-    const author_id: string = req.user.id;
+    const authorId: string = req.user.id;
 
     // @ts-ignore
     const filename = req.file.key;
@@ -24,7 +24,7 @@ class uploadFileController {
     const service = new uploadFileService();
 
     const result = await service.execute({
-      title, description, originalname, filename, size, author_id, url,
+      title, description, originalname, filename, size, authorId, url,
     });
 
     if (result instanceof Error) {

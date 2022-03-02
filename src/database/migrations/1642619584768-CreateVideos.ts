@@ -20,7 +20,7 @@ export class CreateVideos1642619584768 implements MigrationInterface {
             type: 'varchar',
           },
           {
-            name: 'author_id',
+            name: 'authorId',
             type: 'uuid',
           },
           {
@@ -48,7 +48,7 @@ export class CreateVideos1642619584768 implements MigrationInterface {
         foreignKeys: [
           {
             name: 'fk_video_author',
-            columnNames: ['author_id'],
+            columnNames: ['authorId'],
             referencedTableName: 'users',
             referencedColumnNames: ['id'],
           },

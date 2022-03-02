@@ -1,7 +1,8 @@
 import {
-  Entity, Column, CreateDateColumn, PrimaryColumn,
+  Entity, Column, CreateDateColumn, PrimaryColumn, OneToMany,
 } from 'typeorm';
 import { v4 as uuid } from 'uuid';
+import { Video } from './Video.entity';
 
 @Entity('users')
 export class User {
@@ -16,6 +17,9 @@ export class User {
 
     @Column()
       password: string;
+
+    @OneToMany(() => Video, (video) => video.author)
+      videos: Video[];
 
     @CreateDateColumn()
       created_at: Date;

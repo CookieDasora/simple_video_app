@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "A simple API with express, typeorm and postgresql",
   "scripts": {
-    "dev":"npm-run-all -p dev:*",
+    "dev": "npm-run-all -p dev:*",
     "dev:server": "ts-node-dev --transpile-only --respawn src/server.ts",
     "dev:queue": "ts-node-dev --transpile-only src/queue.index.ts",
     "typeorm": "node --require ts-node/register ./node_modules/typeorm/cli.js"
@@ -24,7 +24,7 @@
     "nodemailer": "^6.7.2",
     "pg": "^8.7.1",
     "reflect-metadata": "^0.1.13",
-    "typeorm": "^0.2.41",
+    "typeorm": "^0.2.44",
     "uuid": "^8.3.2",
     "validator": "^13.7.0"
   },

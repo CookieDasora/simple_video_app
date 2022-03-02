@@ -6,7 +6,7 @@ import IVideoRequest from '../interfaces/videoRequest.interface';
 import deleteFileFunction from '../functions/deleteFile.function';
 
 class deleteVideoService {
-  async execute({ video_id, author_id }: IVideoRequest): Promise<Error | String> {
+  async execute({ video_id, authorId }: IVideoRequest): Promise<Error | String> {
     const userRepository = getRepository(User);
     const videoRepository = getRepository(Video);
     const videoDelete = new deleteFileFunction();
@@ -15,13 +15,13 @@ class deleteVideoService {
       return new Error('Invalid video id');
     }
 
-    if (validator.isUUID(author_id) === false || !(await userRepository.findOne(author_id))) {
+    if (validator.isUUID(authorId) === false || !(await userRepository.findOne(authorId))) {
       return new Error('Invalid user id');
     }
 
     const video = await videoRepository.findOne(video_id);
 
-    if (video.author_id !== author_id) {
+    if (video.authorId !== authorId) {
       return new Error('Forbidden');
     }
 

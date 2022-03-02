@@ -10,13 +10,13 @@ class uploadFileService {
     originalname,
     filename,
     size,
-    author_id,
+    authorId,
     url,
   }: IVideoRequest): Promise<Video | Error | string> {
     const repo = getRepository(Video);
     const userRepo = getRepository(User);
 
-    const user = await userRepo.findOne({ where: { id: author_id } });
+    const user = await userRepo.findOne({ where: { id: authorId } });
 
     if (!user) {
       return new Error('This user doesn\'t exists');
@@ -28,7 +28,7 @@ class uploadFileService {
       originalname,
       filename,
       size,
-      author_id,
+      authorId,
       url,
     });
 

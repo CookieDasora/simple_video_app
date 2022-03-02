@@ -2,7 +2,7 @@ interface IVideoRequest {
     video_id?: string;
     title?: string;
     description?: string;
-    author_id?: string;
+    authorId?: string;
     originalname?: string;
     filename?: string;
     size?: number;

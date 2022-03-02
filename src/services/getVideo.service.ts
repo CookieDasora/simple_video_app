@@ -13,8 +13,14 @@ class getVideoService {
 
     const video = await repo.findOne(
       video_id,
-      { select: ['video_id', 'title', 'description', 'author_id', 'created_at', 'url'], relations: ['author'] },
+      {
+        select: ['video_id', 'title', 'description', 'authorId', 'created_at', 'url'],
+        relations: ['author'],
+      },
     );
+
+    delete video.author.password;
+    delete video.author.email;
 
     if (video === undefined) {
       return new Error('Video doesn\'t exists');

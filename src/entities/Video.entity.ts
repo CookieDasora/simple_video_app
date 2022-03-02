@@ -1,5 +1,5 @@
 import {
-  Entity, Column, CreateDateColumn, PrimaryColumn, OneToMany, JoinColumn,
+  Entity, Column, CreateDateColumn, PrimaryColumn, ManyToOne,
 } from 'typeorm';
 import { v4 as uuid } from 'uuid';
 import { User } from './User.entity';
@@ -25,10 +25,10 @@ export class Video {
       size: number;
 
     @Column()
-      author_id: string;
+      authorId: string;
 
-    @OneToMany(() => User, (user) => user.id)
-    @JoinColumn({ name: 'author_id', referencedColumnName: 'id' })
+    // @ts-ignore
+    @ManyToOne(() => User, (user) => user.videos)
       author: User;
 
     @Column()
