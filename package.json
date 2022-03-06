@@ -12,6 +12,7 @@
   "author": "Cookie",
   "license": "ISC",
   "dependencies": {
+    "@prisma/client": "^3.10.0",
     "aws-sdk": "^2.1073.0",
     "bcrypt": "^5.0.1",
     "bull": "^4.6.2",
@@ -23,8 +24,6 @@
     "multer-s3": "^2.10.0",
     "nodemailer": "^6.7.2",
     "pg": "^8.7.1",
-    "reflect-metadata": "^0.1.13",
-    "typeorm": "^0.2.44",
     "uuid": "^8.3.2",
     "validator": "^13.7.0"
   },
@@ -46,6 +45,7 @@
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-plugin-import": "^2.25.4",
     "npm-run-all": "^4.1.5",
+    "prisma": "^3.10.0",
     "ts-node-dev": "^1.1.8",
     "typescript": "^4.5.4"
   }

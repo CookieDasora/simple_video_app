@@ -1,10 +1,7 @@
-import 'reflect-metadata';
 import 'dotenv/config';
 
 import express, { Application, Request, Response } from 'express';
 import morgan from 'morgan';
-
-import './database';
 
 import { router } from './routes';
 

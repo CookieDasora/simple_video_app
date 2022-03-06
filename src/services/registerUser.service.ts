@@ -1,12 +1,11 @@
 import { genSaltSync, hashSync } from 'bcrypt';
-import { getRepository } from 'typeorm';
 import validator from 'validator';
-import { User } from '../entities/User.entity';
 import IUserRequest from '../interfaces/userRequest.interface';
 import Queue from '../lib/Queue';
+import prisma from '../prisma/Client';
 
 class registerUserService {
-  async execute({ username, email, password }: IUserRequest): Promise<User | Error> {
+  async execute({ username, email, password }: IUserRequest): Promise<Object | Error> {
     if (username.length === 0 || email.length === 0 || password.length === 0) {
       return new Error('Missing fields');
     }
@@ -15,28 +14,28 @@ class registerUserService {
       return new Error('Invalid email');
     }
 
-    const repo = getRepository(User);
-
-    if (await repo.findOne({ username })) {
+    if (await prisma.user.findUnique({ where: { username } })) {
       return new Error('User already exists');
     }
 
-    if (await repo.findOne({ email })) {
+    if (await prisma.user.findUnique({ where: { email } })) {
       return new Error('Email already registered');
     }
 
     const salt = genSaltSync(15);
     const hashPassword = hashSync(password, salt);
 
-    const user = repo.create({
-      username,
-      email,
-      password: hashPassword,
+    const user = await prisma.user.create({
+      data: {
+        username,
+        email,
+        password: hashPassword,
+      },
     });
 
     await Queue.add('RegistrationMail', { user });
 
-    await repo.save(user);
+    delete user.password;
 
     return user;
   }

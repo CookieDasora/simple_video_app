@@ -1,7 +1,6 @@
-import { getRepository } from 'typeorm';
-import { User } from '../entities/User.entity';
-import { Video } from '../entities/Video.entity';
+/* eslint-disable no-param-reassign */
 import IVideoRequest from '../interfaces/videoRequest.interface';
+import prisma from '../prisma/Client';
 
 class uploadFileService {
   async execute({
@@ -11,28 +10,27 @@ class uploadFileService {
     filename,
     size,
     authorId,
+    categoryId,
     url,
-  }: IVideoRequest): Promise<Video | Error | string> {
-    const repo = getRepository(Video);
-    const userRepo = getRepository(User);
-
-    const user = await userRepo.findOne({ where: { id: authorId } });
+  }: IVideoRequest): Promise<Object | Error | string> {
+    const user = await prisma.user.findUnique({ where: { id: authorId } });
 
     if (!user) {
       return new Error('This user doesn\'t exists');
     }
 
-    const video = repo.create({
-      title,
-      description,
-      originalname,
-      filename,
-      size,
-      authorId,
-      url,
+    const video = await prisma.video.create({
+      data: {
+        title,
+        description,
+        originalname,
+        filename,
+        size,
+        categoryId,
+        authorId,
+        url,
+      },
     });
-
-    await repo.save(video);
 
     return video;
   }

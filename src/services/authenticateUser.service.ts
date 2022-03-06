@@ -1,15 +1,13 @@
+/* eslint-disable max-len */
 import { compare } from 'bcrypt';
-import { getRepository } from 'typeorm';
 import validator from 'validator';
 import { sign } from 'jsonwebtoken';
-import { User } from '../entities/User.entity';
 import IUserRequest from '../interfaces/userRequest.interface';
+import prisma from '../prisma/Client';
 
 class authenticateUserService {
   async execute({ email, password }: IUserRequest): Promise<Error | Object> {
-    const repo = getRepository(User);
-
-    if (validator.isEmail(email) === false || !(await repo.findOne({ where: { email } }))) {
+    if (validator.isEmail(email) === false || !(await prisma.user.findUnique({ where: { email } }))) {
       return new Error('Invalid email or password');
     }
 
@@ -17,7 +15,7 @@ class authenticateUserService {
       return new Error('Missing fields');
     }
 
-    const user = await repo.findOne({ where: { email } });
+    const user = await prisma.user.findUnique({ where: { email } });
 
     const comparePassword = compare(password, user.password);
 

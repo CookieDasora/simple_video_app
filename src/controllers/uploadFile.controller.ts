@@ -4,7 +4,7 @@ import uploadFileService from '../services/uploadFile.service';
 
 class uploadFileController {
   async handle(req: Request, res: Response) {
-    const { title, description } = req.body;
+    const { title, description, categoryId } = req.body;
 
     if (req.file === undefined) {
       return res.status(400).json({
@@ -24,7 +24,7 @@ class uploadFileController {
     const service = new uploadFileService();
 
     const result = await service.execute({
-      title, description, originalname, filename, size, authorId, url,
+      title, description, originalname, filename, size, authorId, categoryId, url,
     });
 
     if (result instanceof Error) {

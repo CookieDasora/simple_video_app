@@ -3,6 +3,7 @@ interface IVideoRequest {
     title?: string;
     description?: string;
     authorId?: string;
+    categoryId?: string;
     originalname?: string;
     filename?: string;
     size?: number;

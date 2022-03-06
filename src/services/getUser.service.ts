@@ -1,16 +1,13 @@
-import { getRepository } from 'typeorm';
 import validator from 'validator';
-import { User } from '../entities/User.entity';
+import prisma from '../prisma/Client';
 
 class getUserService {
-  async execute(id: string): Promise<User | Error> {
+  async execute(id: string): Promise<Object | Error> {
     if (id.length < 36 || id.length > 36 || validator.isUUID(id) === false) {
       return new Error('Invalid ID');
     }
 
-    const repo = getRepository(User);
-
-    const user = await repo.findOne(id, { select: ['id', 'username', 'created_at'] });
+    const user = await prisma.user.findUnique({ where: { id } });
 
     if (user === undefined) {
       return new Error('User doesn\'t exists');
