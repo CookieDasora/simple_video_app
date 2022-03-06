@@ -1,7 +1,7 @@
 {
   "name": "api",
   "version": "1.0.0",
-  "description": "A simple API with express, typeorm and postgresql",
+  "description": "A simple API with express, prisma and postgresql",
   "scripts": {
     "dev": "npm-run-all -p dev:*",
     "dev:server": "ts-node-dev --transpile-only --respawn src/server.ts",
