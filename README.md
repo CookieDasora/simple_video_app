@@ -9,13 +9,13 @@ A simple video sharing app made with Typescript, Postgresql, Redis and Amazon S3
 
 #### Get all users
 
-```http
+```
   GET /users
 ``` 
 
 #### Get user
 
-```http
+```
   GET /user?u=${userid}
 ```
 
@@ -25,7 +25,7 @@ A simple video sharing app made with Typescript, Postgresql, Redis and Amazon S3
 
 ### Get Video
 
-```http
+```
   GET /video?v=${videoid}
 ```
 
@@ -36,7 +36,7 @@ A simple video sharing app made with Typescript, Postgresql, Redis and Amazon S3
 
 ### Create user
 
-```http
+```
     POST /users/register
 ```
 
@@ -50,7 +50,7 @@ A simple video sharing app made with Typescript, Postgresql, Redis and Amazon S3
 
 ### Login
 
-```http
+```
     POST /users/login
 ```
 | Body      | Type     | Required                          |
@@ -60,7 +60,7 @@ A simple video sharing app made with Typescript, Postgresql, Redis and Amazon S3
 
 ### Create category (Must be authenticated)
 
-```http
+```
   POST /category/new
 ```
 
@@ -72,7 +72,7 @@ A simple video sharing app made with Typescript, Postgresql, Redis and Amazon S3
 
 ### Upload video (Must be authenticated)
 
-```http
+```
   POST /upload
 ```
 
@@ -86,7 +86,7 @@ A simple video sharing app made with Typescript, Postgresql, Redis and Amazon S3
 
 ### Delete video (Must be authenticated)
 
-```http
+```
   POST /video/delete
 ```
 
