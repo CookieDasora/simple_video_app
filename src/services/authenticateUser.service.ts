@@ -2,7 +2,7 @@
 import { compare } from 'bcrypt';
 import validator from 'validator';
 import { sign } from 'jsonwebtoken';
-import IUserRequest from '../interfaces/userRequest.interface';
+import IUserRequest from '../interfaces/UserRequest.interface';
 import prisma from '../prisma/Client';
 
 class authenticateUserService {

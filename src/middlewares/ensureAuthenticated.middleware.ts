@@ -1,6 +1,6 @@
 import { Response, Request, NextFunction } from 'express';
 import { verify } from 'jsonwebtoken';
-import ITokenPayload from '../interfaces/tokenPayload.interface';
+import ITokenPayload from '../interfaces/TokenPayload.interface';
 
 function ensureAuthenticated(req: Request, res: Response, next: NextFunction) {
   if (req.headers.authorization === undefined || req.headers.authorization.length === 0) {

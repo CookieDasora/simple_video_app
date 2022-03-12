@@ -1,1 +1,1 @@
-export { default as RegistrationMailJob } from './registrationMail.job';
+export { default as RegistrationMailJob } from './RegistrationMail.job';

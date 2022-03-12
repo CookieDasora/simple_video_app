@@ -1,9 +1,9 @@
 import { Request, Response } from 'express';
-import getUserService from '../services/getUser.service';
+import getUserService from '../services/GetUserInfo.service';
 
 class getUserController {
   async handle(req: Request, res: Response) {
-    const { id } = req.params;
+    const id = req.query.u as string;
 
     const service = new getUserService();
 

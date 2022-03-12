@@ -1,7 +1,7 @@
 /* eslint-disable no-console */
 /* eslint-disable max-len */
 import Queue from 'bull';
-import IRedisConfig from '../interfaces/redisConfig.interface';
+import IRedisConfig from '../interfaces/RedisConfig.interface';
 
 import * as jobs from '../jobs';
 

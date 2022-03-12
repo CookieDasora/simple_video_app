@@ -1,6 +1,6 @@
 /* eslint-disable no-param-reassign */
 /* eslint-disable max-len */
-import IVideoCategory from '../interfaces/videoCategory.interface';
+import IVideoCategory from '../interfaces/VideoCategory.interface';
 import prisma from '../prisma/Client';
 
 class createCategoryService {

@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import deleteVideoService from '../services/deleteVideo.service';
+import deleteVideoService from '../services/DeleteVideo.service';
 
 class deleteVideoController {
   async handle(req: Request, res: Response) {

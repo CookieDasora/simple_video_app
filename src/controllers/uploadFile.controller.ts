@@ -1,6 +1,6 @@
 import { Request, Response } from 'express';
 
-import uploadFileService from '../services/uploadFile.service';
+import uploadFileService from '../services/UploadFile.service';
 
 class uploadFileController {
   async handle(req: Request, res: Response) {

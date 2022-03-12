@@ -1,7 +1,7 @@
 /* eslint-disable max-len */
 import validator from 'validator';
-import IVideoRequest from '../interfaces/videoRequest.interface';
-import deleteFileFunction from '../functions/deleteFile.function';
+import IVideoRequest from '../interfaces/VideoRequest.interface';
+import deleteFileFunction from '../functions/DeleteFile.function';
 import prisma from '../prisma/Client';
 
 class deleteVideoService {

@@ -1,6 +1,6 @@
 import { genSaltSync, hashSync } from 'bcrypt';
 import validator from 'validator';
-import IUserRequest from '../interfaces/userRequest.interface';
+import IUserRequest from '../interfaces/UserRequest.interface';
 import Queue from '../lib/Queue';
 import prisma from '../prisma/Client';
 

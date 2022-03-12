@@ -2,3 +2,4 @@ node_modules
 .env
 desktop.files.json
 temp
+dist

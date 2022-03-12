@@ -1,7 +1,7 @@
 import { NextFunction, Response, Request } from 'express';
 import multer from 'multer';
-import multerConfig from '../config/multer';
-import deleteFileFunction from '../functions/deleteFile.function';
+import multerConfig from '../config/Multer.config';
+import deleteFileFunction from '../functions/DeleteFile.function';
 
 function uploadFile(req: Request, res: Response, next: NextFunction) {
   const upload = multer(multerConfig).single('file');

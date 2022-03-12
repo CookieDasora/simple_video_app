@@ -1,5 +1,5 @@
 /* eslint-disable no-param-reassign */
-import IVideoRequest from '../interfaces/videoRequest.interface';
+import IVideoRequest from '../interfaces/VideoRequest.interface';
 import prisma from '../prisma/Client';
 
 class uploadFileService {

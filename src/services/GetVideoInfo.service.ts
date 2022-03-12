@@ -1,6 +1,6 @@
 /* eslint-disable max-len */
 import validator from 'validator';
-import IVideoRequest from '../interfaces/videoRequest.interface';
+import IVideoRequest from '../interfaces/VideoRequest.interface';
 import prisma from '../prisma/Client';
 
 class getVideoService {
