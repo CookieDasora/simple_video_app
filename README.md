@@ -5,6 +5,11 @@ A simple video sharing app made with Typescript, Postgresql, Redis and Amazon S3
 
 [![MIT License](https://img.shields.io/github/license/CookieDasora/simple_video_app?style=for-the-badge)](https://github.com/CookieDasora/simple_video_app_backend/blob/master/LICENSE)
 ![Top Language](https://img.shields.io/github/languages/top/CookieDasora/simple_video_app_backend?style=for-the-badge)
+
+## 🧠 Acknowledgements
+ - [Install Docker Engine](https://docs.docker.com/engine/install/)
+ - [Create an Amazon S3 Bucket (Disable block all public access)](https://www.youtube.com/watch?v=e6w9LwZJFIA)
+ - [Create an Amazon IAM user with AmazonS3FullAccess permission](https://www.youtube.com/watch?v=wRzzBb18qUw)
 ## 🤔 API Reference
 
 #### Get all users
