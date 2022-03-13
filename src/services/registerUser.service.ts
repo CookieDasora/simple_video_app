@@ -1,7 +1,7 @@
 import { genSaltSync, hashSync } from 'bcrypt';
 import validator from 'validator';
 import IUserRequest from '../interfaces/UserRequest.interface';
-import Queue from '../lib/Queue';
+// import Queue from '../lib/Queue';
 import prisma from '../prisma/Client';
 
 class registerUserService {
@@ -33,7 +33,7 @@ class registerUserService {
       },
     });
 
-    await Queue.add('RegistrationMail', { user });
+    // await Queue.add('RegistrationMail', { user });
 
     delete user.password;
 
