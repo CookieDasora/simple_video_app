@@ -28,9 +28,6 @@ model Video {
   video_id        String    @id @default(uuid())
   title           String
   description     String?
-  originalname    String
-  filename        String
-  size            Int
   authorId        String
   categoryId      String?
   author          User      @relation(fields: [authorId], references: [id])

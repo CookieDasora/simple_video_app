@@ -6,9 +6,6 @@ class uploadFileService {
   async execute({
     title,
     description,
-    originalname,
-    filename,
-    size,
     authorId,
     categoryId,
     url,
@@ -23,11 +20,8 @@ class uploadFileService {
       data: {
         title,
         description,
-        originalname,
-        filename,
-        size,
-        categoryId,
         authorId,
+        categoryId,
         url,
       },
     });

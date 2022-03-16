@@ -25,9 +25,6 @@ class getVideoService {
 
     delete video.author.password;
     delete video.author.email;
-    delete video.originalname;
-    delete video.filename;
-    delete video.size;
 
     return video;
   }

@@ -4,9 +4,6 @@ interface IVideoRequest {
     description?: string;
     authorId?: string;
     categoryId?: string;
-    originalname?: string;
-    filename?: string;
-    size?: number;
     url?: string | any;
 }
 
