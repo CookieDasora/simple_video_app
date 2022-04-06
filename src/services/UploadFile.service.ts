@@ -8,6 +8,7 @@ class uploadFileService {
     description,
     authorId,
     categoryId,
+    filename,
     url,
   }: IVideoRequest): Promise<Object | Error | string> {
     const user = await prisma.user.findUnique({ where: { id: authorId } });
@@ -22,6 +23,7 @@ class uploadFileService {
         description,
         authorId,
         categoryId,
+        filename,
         url,
       },
     });

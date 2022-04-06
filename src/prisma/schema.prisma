@@ -30,6 +30,7 @@ model Video {
   description     String?
   authorId        String
   categoryId      String?
+  filename        String
   author          User      @relation(fields: [authorId], references: [id])
   category        Category? @relation(fields: [categoryId], references: [category_id])
   url             String

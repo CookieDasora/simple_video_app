@@ -80,7 +80,7 @@ A simple video sharing app made with Typescript, Postgresql, Redis and Amazon S3
 ### Upload video (Must be authenticated)
 
 ```
-  POST /upload
+  POST /video/upload
 ```
 
 | Multipart Body      | Type     | Required                          |

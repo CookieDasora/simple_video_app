@@ -5,6 +5,7 @@ interface IVideoRequest {
     authorId?: string;
     categoryId?: string;
     url?: string | any;
+    filename?: string;
 }
 
 export default IVideoRequest;
