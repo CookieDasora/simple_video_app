@@ -4,7 +4,9 @@ import IVideoCategory from '../interfaces/VideoCategory.interface';
 import prisma from '../prisma/Client';
 
 class createCategoryService {
-  async execute({ category_name, category_description }: IVideoCategory): Promise<Error | Object> {
+  async execute({
+    category_name, category_description, author_id,
+  }: IVideoCategory): Promise<Error | Object> {
     if (category_name.length === 0) {
       return new Error('Category must have a name');
     }
@@ -21,6 +23,7 @@ class createCategoryService {
       data: {
         category_name,
         category_description,
+        author_id,
       },
     });
 

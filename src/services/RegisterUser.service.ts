@@ -9,6 +9,10 @@ class registerUserService {
       return new Error('Missing fields');
     }
 
+    if (/^[a-zA-Z0-9_]{5,}[a-zA-Z]+[0-9]*$/.test(username) === false) {
+      return new Error('Username not allowed');
+    }
+
     if (validator.isEmail(email) === false) {
       return new Error('Invalid email');
     }

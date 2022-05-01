@@ -20,6 +20,7 @@ model Category {
   category_id           String   @id @default(uuid())
   category_name         String   @unique
   category_description  String?
+  author_id             String
   videos                Video[]
   created_at            DateTime @default(now())
 }
